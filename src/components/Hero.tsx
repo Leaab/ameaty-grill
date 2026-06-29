@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Flame, ChefHat, Sparkles, Beef } from "lucide-react";
 import { PremiumImage } from "./PremiumImage";
-import { getFloatingWhatsAppUrl } from "@/lib/whatsapp";
+import { useBooking } from "./BookingProvider";
 
 const badges = [
   { icon: ChefHat, label: "Chef professionnel" },
@@ -13,6 +13,7 @@ const badges = [
 ];
 
 export function Hero() {
+  const { openBooking } = useBooking();
   const scrollToExperience = () => {
     document.querySelector("#experience")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -63,14 +64,13 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a
-              href={getFloatingWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={openBooking}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D6A11F] to-[#F1C75B] px-8 py-4 text-base font-semibold text-[#070707] shadow-lg shadow-[#D6A11F]/25 hover:shadow-[#D6A11F]/40 hover:scale-[1.02] transition-all"
             >
               Réserver sur WhatsApp
-            </a>
+            </button>
             <button
               type="button"
               onClick={scrollToExperience}

@@ -8,10 +8,11 @@ import { GallerySection } from "@/components/GallerySection";
 import { BookingForm } from "@/components/BookingForm";
 import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import { Footer } from "@/components/Footer";
+import { BookingProvider } from "@/components/BookingProvider";
 
 export default function Home() {
   return (
-    <>
+    <BookingProvider>
       <Header />
       <main>
         <Hero />
@@ -24,6 +25,6 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppFloatingButton />
-    </>
+    </BookingProvider>
   );
 }

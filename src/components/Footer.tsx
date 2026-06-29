@@ -1,4 +1,6 @@
-import { Phone, MessageCircle, MapPin } from "lucide-react";
+"use client";
+
+import { Phone, MessageCircle, MapPin, CalendarCheck } from "lucide-react";
 import {
   PHONE_DISPLAY,
   PHONE_LINK,
@@ -8,6 +10,7 @@ import {
   FACEBOOK_URL,
 } from "@/lib/constants";
 import { getFloatingWhatsAppUrl } from "@/lib/whatsapp";
+import { useBooking } from "./BookingProvider";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -48,6 +51,8 @@ function FacebookIcon({ className }: { className?: string }) {
 }
 
 export function Footer() {
+  const { openBooking } = useBooking();
+
   return (
     <footer className="relative bg-[#070707] border-t border-[#D6A11F]/10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16">
@@ -119,15 +124,14 @@ export function Footer() {
           </div>
 
           <div className="md:text-right">
-            <a
-              href={getFloatingWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={openBooking}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#D6A11F] bg-[#D6A11F]/10 px-6 py-3 text-sm font-medium text-[#F1C75B] hover:bg-[#D6A11F]/20 transition-all"
             >
-              <MessageCircle className="h-4 w-4" />
+              <CalendarCheck className="h-4 w-4" />
               Réserver sur WhatsApp
-            </a>
+            </button>
           </div>
         </div>
 
