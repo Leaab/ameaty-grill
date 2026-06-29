@@ -32,8 +32,8 @@ export function Hero() {
           gradientVariant="hero"
           className="h-full w-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070707]/90 via-[#070707]/60 to-[#070707]/95" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(214,161,31,0.12),transparent_60%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070707]/85 via-[#070707]/45 to-[#070707]/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(214,161,31,0.1),transparent_60%)]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-16 pt-32 sm:px-6 sm:pb-24 sm:pt-40">
